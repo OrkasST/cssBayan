@@ -24,15 +24,59 @@
     padding-top: 1rem;
 }
 
-.accordeon div {
+.item {
     border-top: solid #000 1px;
     width: inherit;
     height: 3.4rem;
     overflow: hidden;
-    transition: 500ms;
+    transition: 200ms;
 }
 
-.accordeon div:hover {
+.item_title {
+    position: relative;
+}
+
+.icon {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    z-index: 3;
+}
+
+.icon::after, .icon::before {
+    position: absolute;
+    padding: 0;
+    display: block;
+    content: '';
+    background-color: red;
+}
+.icon::before {
+    left:50%;
+    transform: translate(-50%);
+    width: 0.2rem;
+    height: 1rem;
+}
+.icon::after {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 0.2rem;
+}
+
+.accordeon:hover .item {
+    color: red;
+}
+.accordeon:hover .icon {
+    display: block;
+}
+
+
+.item:hover {
     height: 20rem;      
 }
-
+.item:hover .icon {
+    transform: rotate(45deg);
+}
