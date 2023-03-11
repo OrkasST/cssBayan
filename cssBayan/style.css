@@ -1,4 +1,38 @@
 .accordeon {
     display: flex;
+    position: absolute;
     flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 40rem;
 }
+
+.accordeon img {
+    margin-top: 0.5rem;
+    height: 15rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.accordeon p {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: #fff;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.accordeon div {
+    border-top: solid #000 1px;
+    width: inherit;
+    height: 3.4rem;
+    overflow: hidden;
+    transition: 500ms;
+}
+
+.accordeon div:hover {
+    height: 20rem;      
+}
+
