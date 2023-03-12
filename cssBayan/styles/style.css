@@ -1,3 +1,7 @@
+:root {
+    --full-height: 20rem;
+}
+
 h1 {
     color: #000;
 }
@@ -31,7 +35,7 @@ h1 {
 }
 
 input {
-    display:none;
+    display: none;
 }
 
 .item {
@@ -55,19 +59,23 @@ input {
     height: 1rem;
     z-index: 3;
 }
-.icon::after, .icon::before {
+
+.icon::after,
+.icon::before {
     position: absolute;
     padding: 0;
     display: block;
     content: '';
     background-color: red;
 }
+
 .icon::before {
-    left:50%;
+    left: 50%;
     transform: translate(-50%);
     width: 0.2rem;
     height: 1rem;
 }
+
 .icon::after {
     top: 50%;
     transform: translateY(-50%);
@@ -75,32 +83,40 @@ input {
     height: 0.2rem;
 }
 
-/* Common hover effect */
-.accordeon:hover {
-    color: red;
-}
-.accordeon:hover .icon {
-    display: block;
+@media (min-width: 1200px) {
+
+    /* Common hover effect */
+    .accordeon:hover {
+        color: red;
+    }
+
+    .accordeon:hover .icon {
+        display: block;
+    }
+
+    /* Individual hover effect */
+    .item:hover {
+        height: var(--full-height);
+    }
+
+    .item:hover .icon {
+        transform: rotate(45deg);
+    }
 }
 
-/* Individual hover effect */
-.item:hover {
-    height: 20rem;      
-}
-.item:hover .icon {
-    transform: rotate(45deg);
-}
-
-input:checked + .item {
-    height: 20rem;
+input:checked+.item {
+    height: var(--full-height);
     color: #000;
 }
-input:checked + .item .icon {
+
+input:checked+.item .icon {
     transform: rotate(45deg);
 }
-input:checked + .item .icon::after {
+
+input:checked+.item .icon::after {
     background-color: #000;
 }
-input:checked + .item .icon::before {
+
+input:checked+.item .icon::before {
     background-color: #000;
 }
