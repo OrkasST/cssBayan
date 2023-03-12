@@ -1,3 +1,7 @@
+h1 {
+    color: #000;
+}
+
 .accordeon {
     display: flex;
     position: absolute;
@@ -5,6 +9,8 @@
     font-size: 1.2rem;
     font-weight: bold;
     width: 40rem;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .accordeon img {
@@ -22,6 +28,10 @@
     background-color: #fff;
     margin: 0;
     padding-top: 1rem;
+}
+
+input {
+    display:none;
 }
 
 .item {
@@ -45,7 +55,6 @@
     height: 1rem;
     z-index: 3;
 }
-
 .icon::after, .icon::before {
     position: absolute;
     padding: 0;
@@ -66,17 +75,32 @@
     height: 0.2rem;
 }
 
-.accordeon:hover .item {
+/* Common hover effect */
+.accordeon:hover {
     color: red;
 }
 .accordeon:hover .icon {
     display: block;
 }
 
-
+/* Individual hover effect */
 .item:hover {
     height: 20rem;      
 }
 .item:hover .icon {
     transform: rotate(45deg);
+}
+
+input:checked + .item {
+    height: 20rem;
+    color: #000;
+}
+input:checked + .item .icon {
+    transform: rotate(45deg);
+}
+input:checked + .item .icon::after {
+    background-color: #000;
+}
+input:checked + .item .icon::before {
+    background-color: #000;
 }
